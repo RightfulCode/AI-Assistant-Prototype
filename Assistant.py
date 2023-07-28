@@ -33,7 +33,7 @@ if __name__=='__main__':
             Utility.speak(f"the time is {strTime}")
 
         elif 'news' in statement:
-            Utility.open_utility("https://www.bbc.com/news/world")
+            Utility.open_utility("https://www.bbc.com/news/world", marker=True)
 
         elif 'search'  in statement:    
             statement = statement.replace("search", "")

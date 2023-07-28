@@ -6,6 +6,7 @@ import datetime
 import subprocess
 import pyttsx3
 import wikipedia
+from show import show_link
 import time
 import asyncio
 
@@ -94,6 +95,7 @@ def google_search(query):
         link_address.append(i)
         link_control_variable += 1
     link_dict = make_dict(link_number,link_address)
+    show_link(link_address)
     while True:
         link_control_variable = 1
         action = takeCommand().lower()
@@ -106,6 +108,7 @@ def google_search(query):
                 link_address.append(i)
                 link_control_variable += 1
             link_dict = make_dict(link_number,link_address)
+            show_link(link_address)
         elif "previous" in action:
             if control_variable == 10:
                 speak("Can't go further back.")
@@ -117,10 +120,12 @@ def google_search(query):
                     link_address.append(i)
                     link_control_variable += 1
                 link_dict = make_dict(link_number,link_address)
+                show_link(link_address)
         elif "open" in action:
             sep_statement = action.split()
             open_link(sep_statement,link_dict)
-        else:
+        elif "close" in action or "back" in action:
+            show_link(destroy=True)
             break
 
 async def getweather(city):
