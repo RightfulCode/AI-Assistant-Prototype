@@ -45,11 +45,6 @@ if __name__=='__main__':
                   'opening youtube,google chrome, gmail ,predict time,search wikipedia,' 
                   'get top headline news from times of india and you can ask me other general questions too!')
 
-
-        elif "who made you" in statement or "who created you" in statement or "who discovered you" in statement:
-            Utility.speak("I was built by Syed Ali Raza Mehdi, also known as Rightful")
-            print("I was built by Syed Ali Raza Mehdi, also known as Rightful")
-
         elif "weather" in statement:
             Utility.weather()
                 
